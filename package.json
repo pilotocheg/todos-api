@@ -1,0 +1,54 @@
+{
+  "name": "todos-rest-api",
+  "version": "1.0.0",
+  "description": "simple api for TODO app on node.js + Express with Mongo database.",
+  "main": "index.js",
+  "directories": {
+    "src": "source",
+    "config": "configuration",
+    "test": "test"
+  },
+  "scripts": {
+    "start": "node src/index",
+    "test": "mocha --exit test/**/*.js",
+    "lint": "./node_modules/.bin/eslint src test",
+    "lintfix": "./node_modules/.bin/eslint src test --fix",
+    "nodemon": "nodemon src/index.js",
+    "dbstart": "~/mongodb/bin/mongod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apilguk/interns-backend.git"
+  },
+  "keywords": [
+    "todo",
+    "node.js"
+  ],
+  "author": "Dmitriev Vyacheslav",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apilguk/interns-backend/issues"
+  },
+  "homepage": "https://github.com/pilotocheg/todos-api#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.7"
+  },
+  "devDependencies": {
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.3",
+    "supertest": "^3.1.0",
+    "timekeeper": "^2.1.2"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "node_modules/*",
+      "test/*"
+    ]
+  }
+}
