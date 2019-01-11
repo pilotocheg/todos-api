@@ -23,8 +23,8 @@ taskShema.set('toObject', {
 });
 
 taskShema.statics.isForbiddenParams = (obj) => {
-  for (const i in obj) {
-    if (i === 'timestamp' || i === 'id') throw new Error(i);
+  if (obj.timestamp || obj.id) {
+    throw new Error(obj.timestamp ? 'timestamp' : 'id');
   }
   return true;
 };
@@ -34,7 +34,9 @@ taskShema.statics.checkQueryParams = (query, paramsObj) => {
   if (query) {
     if (['name', 'description', 'timestamp'].includes(query.sortBy)) {
       params.sort = {};
-      params.sort[query.sortBy] = (['asc', 'desc'].includes(query.sortOrder) ? query.sortOrder : 'desc');
+      params.sort[query.sortBy] = ['asc', 'desc'].includes(query.sortOrder)
+        ? query.sortOrder
+        : 'desc';
     }
     if (query.limit && Number(query.limit)) params.limit = Number(query.limit);
     if (query.offset && Number(query.offset)) params.skip = Number(query.offset);
