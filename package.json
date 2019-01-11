@@ -10,15 +10,15 @@
   },
   "scripts": {
     "start": "node src/index",
+    "development": "nodemon src/index.js",
     "test": "mocha --exit test/**/*.js",
     "lint": "./node_modules/.bin/eslint src test",
     "lintfix": "./node_modules/.bin/eslint src test --fix",
-    "nodemon": "nodemon src/index.js",
     "dbstart": "~/mongodb/bin/mongod"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/apilguk/interns-backend.git"
+    "url": "git+https://github.com/pilotocheg/todos-api.git"
   },
   "keywords": [
     "todo",
@@ -27,7 +27,7 @@
   "author": "Dmitriev Vyacheslav",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/apilguk/interns-backend/issues"
+    "url": "https://github.com/pilotocheg/todos-api/issues"
   },
   "homepage": "https://github.com/pilotocheg/todos-api#readme",
   "dependencies": {
